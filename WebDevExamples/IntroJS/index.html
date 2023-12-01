@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSite</title>
+
+    <script>
+
+        function getNomeUtente() {
+            return prompt("Metti il tuo nome")
+        }
+
+        //NON CHIAMATE CLOSE QUESTA FUNZIONE! #itsJavascript
+        function closeWin() {
+            let choice = confirm("Sei sicuro di voler uscire?")
+            if (choice) window.close()
+        }
+
+        function openPage(pageName, openType = "_self") {
+            window.open(pageName, openType)
+        }
+
+        function greeting() {
+            let nomeUtente = getNomeUtente()
+
+            //devo scrivere ciao, nomeUtente in un elemento HTML specifco
+            document.getElementById("nome").textContent 
+            = "Ciao, "+ nomeUtente
+            alert("Benvenuto al sito, "+nomeUtente)
+
+            setTimeout(closeWin, 2000)
+            
+        }
+
+        
+         
+    </script>
+
+</head>
+<body onload="greeting()">
+        <h1 align="center">Il mio sito</h1>
+        <h2 style="text-align:center" id="nome">Altro titolo</h2>
+        <button onclick="openPage('anotherPage.html')">Carica altra pagina</button>
+</body>
+</html>

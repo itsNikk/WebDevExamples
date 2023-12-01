@@ -1,0 +1,61 @@
+/* L'elemento HMTL con id="clock"
+*/
+#clock {
+
+    font: bold 24px sans-serif;
+    background: #ddf;
+    padding: 15px;
+    border: solid black 3px;
+    border-radius: 10px;
+}
+
+/*
+ogni elemento body
+*/
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/*Stile di OGNI elemento h1*/
+h1 {
+    color: red;
+}
+
+/*
+Ogni elemento con something come attributo class
+.something {
+    color: red;
+}
+
+*/
+
+
+/*
+    p[lang="en"] => un <p> scritto in inglese
+    
+    * = wildcard per indicare TUTTI gli elementi
+    *[name="x"]
+    
+    */
+
+/*
+    span.fatal.error => qualunque <span> con classe fatal e error 
+
+    span[lang="fr"].warning
+*/
+
+/*
+    #log span => qualunque <span> descendant dell'elemento con id="log"
+
+    body>h1:first-child => il primo <h1> figlio di <body>
+
+*/
+
+/*
+    button, input[type="button] => tutti i <button> ED ANCHE <input type="button>"
+
+*/
