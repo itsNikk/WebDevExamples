@@ -1,36 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina 1</title>
-</head>
-<body>
-<h2>Form</h2>
-<form id="myForm" onsubmit="return Foo()">
-    <label for="parametro1">Parametro 1:</label>
-    <input type="text" id="parametro1" name="parametro1" required>
-    <br>
-    <label for="parametro2">Parametro 2:</label>
-    <input type="text" id="parametro2" name="parametro2" required>
-    <br>
-    <input type="submit" value="Invia">
-</form>
-
-<script>
-    function Foo() {
-        // Ottieni i valori dai campi del modulo
-        var parametro1 = document.getElementById("parametro1").value;
-        var parametro2 = document.getElementById("parametro2").value;
-
-        // Costruisci l'URL con i parametri
-        var urlDestinazione = "pagina2.html?parametro1=" + encodeURIComponent(parametro1) + "&parametro2=" + encodeURIComponent(parametro2);
-
-        // Redirect alla seconda pagina
-        window.location.href = urlDestinazione;
-
-        return false
-    }
-</script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pagina 1</title>
+        <script src="scripts/ManageSubmission.js" defer></script>
+    </head>
+    <body>
+        <h2>Form</h2>
+        <form id="myForm">
+            <label for="parametro1">Parametro 1:</label>
+            <input type="text" id="parametro1" name="parametro1" required>
+            <br>
+            <label for="parametro2">Parametro 2:</label>
+            <input type="text" id="parametro2" name="parametro2" required>
+            <br>
+            <input type="submit" value="Invia">
+        </form>
+    </body>
 </html>
