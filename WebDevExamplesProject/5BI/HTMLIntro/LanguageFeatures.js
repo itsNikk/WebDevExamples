@@ -66,6 +66,7 @@ let myObj = {
 
 console.log(myObj);
 
+// for-in, for specifico per oggetti
 for(let elem in myObj){
     console.log(elem + " "+ myObj[elem]);
 }
