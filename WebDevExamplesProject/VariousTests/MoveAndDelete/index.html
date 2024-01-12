@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move and Delete Options</title>
+    <style>
+        select {
+            width: 150px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<select id="select1" onclick="moveOption(this, 'select2')">
+    <option value="1">Element 1</option>
+    <option value="2">Element 2</option>
+    <option value="3">Element 3</option>
+</select>
+
+<select id="select2" oncontextmenu="deleteOption(event, this)">
+    <option value="4">Element 4</option>
+    <option value="5">Element 5</option>
+    <option value="6">Element 6</option>
+</select>
+
+<script>
+    function moveOption(selectElement, targetSelectId) {
+        let selectedOption = selectElement.options[selectElement.selectedIndex];
+        if (selectedOption) {
+            let targetSelect = document.getElementById(targetSelectId);
+            targetSelect.add(new Option(selectedOption.text, selectedOption.value));
+            selectElement.remove(selectElement.selectedIndex);
+        }
+    }
+
+    function deleteOption(event, selectElement) {
+        event.preventDefault(); // Prevent the default right-click context menu
+        let selectedIndex = selectElement.selectedIndex;
+        if (selectedIndex !== -1) {
+            selectElement.remove(selectedIndex);
+        }
+    }
+</script>
+
+</body>
+</html>

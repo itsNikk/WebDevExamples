@@ -89,24 +89,34 @@ td = table data/datum
 --->
 <div>
 
-    <table border="1" cellpadding="10">
+    <table border="1" cellpadding="10" width="80%">
         <tbody>
 
         <tr>
-            <th>Anno</th>
-            <th>Vendite</th>
+            <th rowspan="2">Anno</th>
+            <th colspan="3">Vendite</th>
         </tr>
-
+        <tr>
+            <th>Nord</th>
+            <th>Sud</th>
+            <th>Centro</th>
+        </tr>
         <tr>
             <td>2002</td>
+            <td>3500€</td>
+            <td>3500€</td>
             <td>3500€</td>
         </tr>
         <tr>
             <td>2022</td>
             <td>8500€</td>
+            <td>8500€</td>
+            <td>8500€</td>
         </tr>
         <tr>
             <td>2012</td>
+            <td>5500€</td>
+            <td>5500€</td>
             <td>5500€</td>
         </tr>
         </tbody>
