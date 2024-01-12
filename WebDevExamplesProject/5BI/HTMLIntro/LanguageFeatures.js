@@ -24,6 +24,7 @@ saluta("Luca")
 saluta(3)
 
 
+// le funzioni sono tipi ;)
 let convertiInMiglia = function miglia(km) {
     
     return km * 0.6214
@@ -40,6 +41,7 @@ function calcola(a,b,op) {
 function somma(a,b) {
     return a+b;
 }
+//funzioni come parametri
 console.log(calcola(23,3,somma));
 // funzioni anonime
 console.log(calcola(4,5, (a,b) => a-b))
