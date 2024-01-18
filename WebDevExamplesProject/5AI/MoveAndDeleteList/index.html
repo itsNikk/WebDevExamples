@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Element Between Lists</title>
+    <style>
+        #list1, #list2 {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 150px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+
+<select id="selectList" size="5">
+    <option value="item1">Item 1</option>
+    <option value="item2">Item 2</option>
+    <option value="item3">Item 3</option>
+    <option value="item4">Item 4</option>
+    <option value="item5">Item 5</option>
+</select>
+
+<div id="list1">
+    <p><strong>List 1</strong></p>
+</div>
+
+<div id="list2">
+    <p><strong>List 2</strong></p>
+</div>
+
+<script>
+    // Funzione per spostare l'elemento tra le liste
+    function moveElement(targetList, sourceList) {
+        const selectList = document.getElementById('selectList');
+        const selectedOption = selectList.options[selectList.selectedIndex];
+
+        if (selectedOption) {
+            // Rimuovi l'elemento dalla lista di origine
+            sourceList.appendChild(selectedOption);
+
+            // Aggiungi l'elemento alla lista di destinazione
+            targetList.appendChild(selectedOption);
+        }
+    }
+
+    // Gestione del click sinistro
+    document.getElementById('selectList').addEventListener('click', function() {
+        moveElement(document.getElementById('list2'), document.getElementById('list1'));
+    });
+
+    // Gestione del click destro (evento context menu)
+    document.getElementById('selectList').addEventListener('contextmenu', function(event) {
+        event.preventDefault(); // alcuni eventi hannoo un coportamento di default che deve essere sovrascritto.
+        moveElement(document.getElementById('list1'), document.getElementById('list2'));
+    });
+</script>
+
+</body>
+</html>
