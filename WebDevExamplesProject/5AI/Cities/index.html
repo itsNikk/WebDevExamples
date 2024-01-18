@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu a Tendina con Immagini</title>
+</head>
+<body>
+
+<label for="citySelect">Seleziona una città:</label>
+<select id="citySelect" onchange="showCityImage()">
+    <option value="rome">Roma</option>
+    <option value="paris">Parigi</option>
+    <option value="newyork">New York</option>
+    <!-- Aggiungi altre città secondo necessità -->
+</select>
+
+<div id="cityImageContainer">
+    <p>Immagine della città:</p>
+    <img id="cityImage" src="" alt="Immagine della città">
+</div>
+
+<script>
+    function showCityImage() {
+        var citySelect = document.getElementById("citySelect");
+        var cityImage = document.getElementById("cityImage");
+
+        // Ottieni il valore selezionato
+        var selectedCity = citySelect.value;
+
+        // Definisci il percorso dell'immagine in base alla città selezionata
+        var imagePath = getImagePath(selectedCity);
+
+        // Mostra l'immagine nella pagina
+        cityImage.src = imagePath;
+    }
+
+    function getImagePath(city) {
+        // Definisci i percorsi delle immagini per le diverse città
+        var imagePaths = {
+            "rome": "images/rome.jpg",  // Aggiungi il percorso dell'immagine per Roma
+            "paris": "images/paris.jpg",  // Aggiungi il percorso dell'immagine per Parigi
+            "newyork": "images/newyork.jpeg"  // Aggiungi il percorso dell'immagine per New York
+            // Aggiungi altri percorsi delle immagini secondo necessità
+        };
+
+        // Restituisci il percorso dell'immagine per la città specificata
+        return imagePaths[city];
+    }
+</script>
+
+</body>
+</html>
