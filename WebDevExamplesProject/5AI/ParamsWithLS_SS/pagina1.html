@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 1</title>
+</head>
+<body>
+    <h1>Form  pagina 1</h1>
+    <form id="myForm" onsubmit="return formSubmission()">
+        <label for="p1">Parametro 1:</label>
+        <input type="text" id="p1" name="p1" required></input>
+        <br>
+        <label for="p2">Parametro 2:</label>
+        <input type="text" name="p2" id="p2" required>
+        <br>
+        <input type="submit" value="Invia">
+    </form>
+
+    <script>
+
+        function formSubmission() {
+            let p1 = document.getElementById('p1').value
+            let p2 = document.getElementById('p2').value
+
+            localStorage.setItem("p1",p1)
+            localStorage.setItem("p2",p2)
+
+            window.location.href = "pagina2.html"
+
+        return false
+        }
+    </script>
+</body>
+</html>
