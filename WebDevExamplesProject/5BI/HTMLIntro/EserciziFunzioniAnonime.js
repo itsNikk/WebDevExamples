@@ -31,13 +31,12 @@ console.log(applyFunctionToString("Hello, World!", str => str.toUpperCase()))
 console.log(applyFunctionToString("Hello, World!", str => estraiPrimiCaratteri(str, 4)));
 
 //Esercizio 3
-function calcolaEtaMedia(objArray, calc) {
-    let sommaEta = 0;
-    for (const elem of objArray) {
-        sommaEta += calc(elem)
-    }
-    return sommaEta / objArray.length
-}
+/*
+* Definisci una funzione ‘calcolaEtaMedia’
+* che accetti un array di oggetti (ogni oggetto descrive una persona tramite il nome e l’età) e una funzione
+* come parametri e restituisca la media dell'età estratta dagli oggetti dell'array.
+*
+* */
 
 const people = [
     {name: "Alice", age: 25},
@@ -45,4 +44,13 @@ const people = [
     {name: "Charlie", age: 22},
 ];
 
+function calcolaEtaMedia(objArray, f) {
+    let sumOfAges = 0;
+    for (let elem of objArray) {
+        sumOfAges += f(elem);
+    }
+    return sumOfAges / objArray.length
+}
+
 console.log(calcolaEtaMedia(people, person => person.age))
+console.log(calcolaEtaMedia(people, person => person.name.length))
