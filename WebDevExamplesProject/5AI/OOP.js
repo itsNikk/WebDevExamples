@@ -14,7 +14,7 @@ class Animal {
         return this.name
      }
 
-     set name(newName){
+     set name(newName) {
         this.name = newName
      }
 
@@ -22,7 +22,7 @@ class Animal {
         console.log("Animale fa rumore");    
     }
 
-    static metodoStatico(){
+    static metodoStatico() {
         console.log("Sono un metodo statico");
     }
 }
