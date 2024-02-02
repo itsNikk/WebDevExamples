@@ -54,3 +54,55 @@ function calcolaEtaMedia(objArray, f) {
 
 console.log(calcolaEtaMedia(people, person => person.age))
 console.log(calcolaEtaMedia(people, person => person.name.length))
+
+// Dato un array di numeri, restituire la somma dei quadrati dei numeri pari.
+// ** = elevamento a potenza
+console.log("ESERCIZIO 1");
+let a = [1,2,4,6,5,3] 
+console.log(a.filter(n=>n%2===0 && n>=2)
+            .map(n=> n**2)
+            .reduce((a,b)=> a+b,0)
+);
+
+
+// ESERCIZIO 2
+console.log("ESERCIZIO 2");
+let words = ['ciao', 'mondo', 'sole', 'albero', 'mare']
+console.log(words.filter(w=> w.length%2===0)
+                 .map(w=>w.length**2)
+                 .reduce((a,b)=> a+b,0)
+);          
+
+
+//ESERCIZIO 3
+console.log("ESERCIZIO 3");
+const numeri = [3, -1, 7, 10, -2, 5]
+const numeriFiltrati = numeri.filter(n=>n>0)
+
+console.log(numeriFiltrati
+            .reduce((a,b)=>a+b,0) / numeriFiltrati.length
+);
+
+// ESERCIZIO 4
+console.log("ESERCIZIO 4");
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [3, 4, 5, 6, 7];
+
+console.log(
+
+array1.filter(e => array2.includes(e))
+
+);  
+
+//ESERCIZIO 5
+console.log("ESERCIZIO 5");
+const parole = ['ciao', 'mondo', 'ciao', 'javascript'];
+
+console.log(
+
+    parole.filter(
+        (parola,index,array)=> array.indexOf(parola)===index)
+
+
+    
+);
