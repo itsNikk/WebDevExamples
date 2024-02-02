@@ -9,8 +9,11 @@ function getParamsAndRedirect() {
     const p1 =document.getElementById("p1").value
     const p2 =document.getElementById("p2").value
 
-    const destionationURL = "pagina2.html?p1="
-    +encodeURIComponent(p1) + "&p2="
+    const basePageURl = "pagina2.html?"
+    const param1Name = "p1"
+    const param2Name = "p2"
+    const destionationURL = basePageURl+param1Name+"="
+    +encodeURIComponent(p1) + "&"+param2Name+"="
     +encodeURIComponent(p2)
 
     window.location.href = destionationURL
