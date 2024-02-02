@@ -1,0 +1,30 @@
+<!-- Pagina 2: pagina2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creazione Tabella da Query String</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const params = new URLSearchParams(window.location.search);
+      const righe = parseInt(params.get('righe')) || 2;
+      const colonne = parseInt(params.get('colonne')) || 2;
+
+      const table = document.createElement('table');
+      for (let i = 0; i < righe; i++) {
+        const row = table.insertRow();
+        for (let j = 0; j < colonne; j++) {
+          const cell = row.insertCell();
+          cell.textContent = Math.floor(Math.random() * 100); // Valori random
+        }
+      }
+
+      document.body.appendChild(table);
+    });
+  </script>
+</head>
+<body>
+  <h1>Tabella Generata dalla Query String</h1>
+</body>
+</html>
