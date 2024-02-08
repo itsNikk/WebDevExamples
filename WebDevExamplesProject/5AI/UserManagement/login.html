@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Login</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="scripts/login.js" defer></script>
+</head>
+<body>
+<h1 class="text-primary text-center mt-2">User Login</h1>
+<div class="container mt-5">
+
+    <form id="loginForm">
+        <div class="row g-3 align-items-center">
+            <label for="username"> Username<input type="text" class="form-control form-control-sm"
+                                                  placeholder="Username here"
+                                                  id="username" required></label>
+        </div>
+        <div class="row g-3 align-items-center"><label for="password"> Password
+            <input id="password" type="password" class="form-control form-control-sm" placeholder="Password here"
+                   required>
+        </label></div>
+        <div class="text-center">
+            <button class="btn btn-primary mx-auto" type="submit" id="loginBtn">Login</button>
+            <button class="btn btn-secondary" id="registerBtn">Registrati</button>
+        </div>
+    </form>
+
+</div>
+</body>
+</html>
