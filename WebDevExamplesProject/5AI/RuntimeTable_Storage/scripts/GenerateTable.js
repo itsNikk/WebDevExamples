@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-
     let datiSessionStorage = sessionStorage.getItem('datiTabella');
     const dati = datiSessionStorage ? JSON.parse(datiSessionStorage) : [];
 
@@ -19,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         headerRow.appendChild(headerCell);
     }
 
-    // insert data
+    // Insert data
     for (const record of dati) {
         const row = table.insertRow();
         for (const key in record) {
