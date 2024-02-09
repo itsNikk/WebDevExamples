@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web App con Session Storage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App con Session Storage</title>
 </head>
 <body>
-  <button onclick="creaTabella()">Crea Tabella</button>
+<button onclick="creaTabella()">Crea Tabella</button>
 
 
-  <!--- Mi son permesso di usare JS dentro a HTML in questo caso solo per comodità.
-  --->
-  <script>
+<!--- Mi son permesso di usare JS dentro a HTML in questo caso solo per comodità.
+--->
+<script>
     function creaTabella() {
-      const dati = [
-        { nome: 'Prodotto 1', prezzo: 20 },
-        { nome: 'Prodotto 2', prezzo: 30 },
-        { nome: 'Prodotto 3', prezzo: 25 }
-      ];
+        const dati = [
+            {nome: 'Prodotto 1', prezzo: 20},
+            {nome: 'Prodotto 2', prezzo: 30},
+            {nome: 'Prodotto 3', prezzo: 25}
+        ];
 
-      sessionStorage.setItem('datiTabella', JSON.stringify(dati));
+        sessionStorage.setItem('datiTabella', JSON.stringify(dati));
 
-      window.location.href = 'pagina2.html';
+        window.location.href = 'pagina2.html';
     }
-  </script>
+</script>
 </body>
 </html>
