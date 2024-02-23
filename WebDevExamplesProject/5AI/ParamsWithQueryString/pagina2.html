@@ -1,27 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina 2 leggere param</title>
+    <script src="scripts/GetParams.js"></script>
 </head>
+
 <body>
     <h1>Pagina 2</h1>
     <h1 class="params"> </h1>
-    <h2 class="params" ></h2>
-
-    <script>
-
-        let p1 = new URLSearchParams(window.location.search).get("p1")
-        let p2 = new URLSearchParams(window.location.search).get("p2")
-
-        let params = document.querySelectorAll('.params')
-        
-        params[0].textContent = p1
-        params[1].textContent = p2
-
-        // usare i parametri come vuole l'applicazione X
-    </script>
-
+    <h2 class="params"></h2>
 </body>
+
 </html>
