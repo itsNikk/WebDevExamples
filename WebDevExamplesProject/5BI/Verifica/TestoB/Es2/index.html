@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="currencyConverter.js" defer></script>
+    <title>Convertitore di Valuta</title>
+</head>
+<body>
+<form id="currency-form">
+    <input type="number" id="amount" placeholder="Inserisci l'importo da convertire">
+    <select id="from-currency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+    </select>
+    <select id="to-currency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+    </select>
+    <button type="submit">Converti</button>
+</form>
+<div id="result"></div>
+
+</body>
+</html>
