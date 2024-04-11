@@ -10,5 +10,5 @@ testFunction().then(result => console.log(result)).catch(err => console.log(err.
 
 //FETCH API
 fetch('https://jsonplaceholder.typicode.com/todos/1')
-.then(res => res.json())
-.then(r => console.log(r["title"]))
+    .then(res => res.json())
+    .then(r => console.log(r["title"]))
