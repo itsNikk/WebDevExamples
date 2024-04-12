@@ -7,7 +7,14 @@ async function getAllUsers(url) {
         let jsonValue = await promise.json()
         console.log(jsonValue)
     } else {
-        console.log("HTTP-Error: " + promise.status)
+        console.log(new HTTPError(promise.status))
+    }
+}
+
+class HTTPError extends Error {
+    constructor(message){
+        super(message)
+        this.name = "HTTP-Error"
     }
 }
 
