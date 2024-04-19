@@ -6,6 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const piadinaBtn = document.getElementById("piadinaButton")
     const optionsList = document.getElementById("optionsList")
     const customizationList = document.getElementById("customizationOptions")
+    const selectedDish = document.getElementById('selectedDish');
+    const selectedToppings = document.getElementById('selectedToppings');
+    const cheeseCB = document.getElementById('cheeseCB');
+    const sauceCB = document.getElementById('sauceCB');
+
+    let userInput
 
     // disabilito la lista, la rendo non-cliccabile
     optionsList.disabled = true
@@ -23,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function showOptions(userChoice) {
         optionsList.disabled = false
         customizationList.style.display = "block"
+        userInput = userChoice
 
         let options = []
         switch (userChoice) {
@@ -41,6 +48,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         insertOptionsToList(options)
+        updateSummary()
+    }
+
+    function updateSummary() {
+        let summary = "Pietanza selezionata: "
+            + userInput + " " + optionsList.selectedValue;
+
+
+        summary += " Aggiunte: "
+        if (cheeseCB.checked) {
+            summary += cheeseCB.value
+        } else if (sauceCB.checked) {
+            summary += sauceCB.value
+        } else if (sauceCB.checked && cheeseCB.checked) {
+            summary += sauceCB.value + ", " + cheeseCB.value
+        }
+
+        selectedDish.textContent = summary
+
     }
 
     function insertOptionsToList(theOptions) {
