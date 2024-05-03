@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talk js example</title>
+    <!-- minified snippet to load TalkJS without delaying your page -->
+    <script>
+        (function (t, a, l, k, j, s) {
+            s = a.createElement('script'); s.async = 1; s.src = 'https://cdn.talkjs.com/talk.js'; a.head.appendChild(s)
+                ; k = t.Promise; t.Talk = {
+                    v: 3, ready: {
+                        then: function (f) {
+                            if (k) return new k(function (r, e) { l.push([f, r, e]) }); l
+                                .push([f])
+                        }, catch: function () { return k && new k() }, c: l
+                    }
+                };
+        })(window, document, []);
+    </script>
+    <script>
+        Talk.ready.then(function () {
+            const me = new Talk.User({
+            id: 'Gigi',
+            name: 'Gigi Ignazio',
+            email: 'nina@example.com',
+            photoUrl: 'https://talkjs.com/new-web/avatar-7.jpg',
+            welcomeMessage: 'Hi!',
+        });
+        const session = new Talk.Session({
+            appId: 'tzpYivGn', // replace with your app ID
+            me: me,
+        });
+        const Ales = new Talk.User({
+            id: 'Ales',
+            name: 'AKESS',
+            email: 'frank@example.com',
+            photoUrl: 'https://talkjs.com/new-web/avatar-8.jpg',
+            welcomeMessage: 'Hey, how can I help?',
+        });
+        const jUI = new Talk.User({
+            id: 'jUI',
+            name: 'JulLiana',
+            email: 'juliana@example.com',
+            photoUrl: 'https://talkjs.com/new-web/avatar-1.jpg',
+            welcomeMessage: 'Hey, how can I help?',
+        });
+
+        const conversation = session.getOrCreateConversation('new_conversation');
+        conversation.setParticipant(me);
+        conversation.setParticipant(Ales);
+        conversation.setParticipant(jUI);
+
+        const chatbox = session.createChatbox();
+        chatbox.select(conversation);
+        chatbox.mount(document.getElementById('talkjs-container'));
+        });
+    </script>
+</head>
+
+<body>
+    <!-- container element in which TalkJS will display a chat UI -->
+    <div id='talkjs-container' style='width: 90%; margin: 30px; height: 500px'>
+        <i>Loading chat...</i>
+
+</body>
+
+</html>
