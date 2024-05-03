@@ -7,9 +7,13 @@ function generateRandomNumber(minNum, maxNum, minDelayInSec, maxDelayInSec) {
         if (minNum < 10 || maxNum > 100) reject(new RangeError("Inserire valori nel range [1,100]. Valori inseriti:" + minNum + ", " + maxNum))
         if (minDelayInSec < 1 || maxDelayInSec > 4) reject(new RangeError("Inserire valori nel range [1, 4]. Valori inseriti: (" + minDelayInSec + ", " + maxDelayInSec + ")"))
 
-        setTimeout(() => resolve(generateRandomNumberInRange(minNum, maxNum)), generateRandomNumberInRange(minDelayInSec * 1000, maxDelayInSec * 1000))
+        setTimeout(
+            () =>
+                resolve(generateRandomNumberInRange(minNum, maxNum)),
+            generateRandomNumberInRange(minDelayInSec * 1000, maxDelayInSec * 1000))
     })
 }
+
 
 let n1Elem = document.getElementById("number1")
 let n2Elem = document.getElementById("number2")
