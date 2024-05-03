@@ -22,7 +22,7 @@ async function AddNewUser(addUserURL) {
         age: '',
         gender: '',
         birthDate: '',
-        address: {}
+        address: { address: '', city: '', postalCode: '', state: '', }
     }
 
     newUserObj.firstName = userNameFromForm
@@ -30,6 +30,8 @@ async function AddNewUser(addUserURL) {
     newUserObj.age = userAge
     newUserObj.gender = GetUserGender()
     newUserObj.birthDate = document.getElementById("birthDate").value
+    //aggiungere altri campi a piacimento
+    newUserObj.address.address = document.getElementById("address").value
 
     let response = await fetch(addUserURL, {
         method: 'POST',
