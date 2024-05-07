@@ -11,7 +11,8 @@ getWormsBtn.addEventListener("click", function () {
 let newWormUser = {
     firstName: '',
     lastName: '',
-    age: ''
+    age: '',
+    password:''
 }
 
 async function getWorms(url) {
@@ -25,11 +26,15 @@ async function getWorms(url) {
         newWormUser.firstName = worm
         newWormUser.lastName = worm + "WormSurname"
         newWormUser.age = worm.length + newWormUser.lastName.length
-
+        newWormUser.password = worm+worm.length/2+newWormUser.lastName+newWormUser.lastName.length*2+"!W"
+        //console.log(newWormUser)
+        
         let postResponse = await fetch("https://dummyjson.com/users/add", {
             method: "POST",
             headers: { 'Content-Type': "application/json" },
-            body: JSON.stringify()
+            body: JSON.stringify(newWormUser)
         })
+        let fromServer = await postResponse.json()
+        console.log(fromServer)
     }
 } 
